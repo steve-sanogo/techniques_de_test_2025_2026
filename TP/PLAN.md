@@ -1,6 +1,6 @@
 # Plan de test
 ## 1.	Vérification du PointSetID
-###Objectif
+### Objectif
 Vérifier que le PointSetID fourni par le client est valide, existant et conforme au format attendu, afin d’éviter tout échec d’appel au PointSetManager.
 ### Scénarii de tests : 
 -	Envoyer un ID renvoyé précédemment par le PointSetManager lors de l’enregistrement.
@@ -9,20 +9,20 @@ Vérifier que le PointSetID fourni par le client est valide, existant et conform
 -	Envoyer un PointSetID contenant des caractères spéciaux (ex. "!@#$%^&*()").
 -	Envoyer un PointSetID de type incorrect (par exemple un nombre entier, ou un décimal au lieu d’une chaîne de caractères)
 
-###2.	Vérifier la structure et les points d’un PointSet
-###Objectif
+### 2.	Vérifier la structure et les points d’un PointSet
+### Objectif
 S’assurer que le PointSet récupéré est valide, complet et cohérent avant le calcul de triangulation.
-###Scénarii de tests : 
+### Scénarii de tests : 
 -	Vérifier que le nombre de points indiqué dans les 4 premiers bytes différent de 0.
 -	Vérifier que le nombre de points indiqué est supérieur à 3.
 -	Vérifier que la taille réelle des données (hors les 4 premiers bytes) correspond bien à nombre_points * 8.
 -	Vérifier que les coordonnées X et Y de chaque point ne sont pas vides.
 -	Vérifier que le Pointset ne contient pas des points identiques (points en double)
 
-###3.	Vérification de la structure et des points des Triangles
-###Objectif
+### 3.	Vérification de la structure et des points des Triangles
+### Objectif
 Vérifier que la sortie du Triangulator est correcte, cohérente et conforme à la spécification binaire.
-###Scénarii de tests : 
+### Scénarii de tests : 
 -	Vérifier que le nombre de points = nombre de points du PointSet d’origine
 -	Vérifier que le nombre de bytes correct est correct c’est à dire 4 + 8 * nb_points
 -	Coordonnées valides (non vides, type correct)
@@ -49,10 +49,10 @@ S’assurer que le Triangulator interagit correctement avec le PointSetManager, 
 -	Gestion d’erreurs du PointSetManager (404, 500, timeout)
 -	Vérifier que le Triangulator renvoie des erreurs explicites en cas d’échec
 
-###6.	Tests de robustesse et performance
-###Objectif
+### 6.	Tests de robustesse et performance
+### Objectif
 S’assurer de la robustesse, de la stabilité et des performances du Triangulator dans des conditions extrêmes ou anormale.
-###Scénarii de tests : 
+### Scénarii de tests : 
 -	Triangulation d’un grand PointSet (plus de 900 points), afin de vérifier le temps de calcul et de consommation mémoire
 -	Gestion de données corrompues ou incomplètes
 -	Test de résilience lors de défaillance réseau avec PointSetManager
