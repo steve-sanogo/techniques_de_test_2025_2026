@@ -1,5 +1,5 @@
 # Plan de test
-## 1.	Vérification du PointSetID
+### 1.	Vérification du PointSetID
 ### Objectif
 Vérifier que le PointSetID fourni par le client est valide, existant et conforme au format attendu, afin d’éviter tout échec d’appel au PointSetManager.
 ### Scénarii de tests : 
@@ -39,7 +39,20 @@ Vérifier que le Triangulator calcule correctement les triangles pour un PointSe
 -	Tous indicent valides et dans la plage des sommets
 -	Prévoir le cas où les points entrés ne sont pas une ligne. S’ils ne sont, le gérer et retourner un message d’erreur : « Triangulation impossible » 
 
-### 5.	Cas de tests d’intégration avec PointSetManager
+
+
+### 5. Vérification de la sérialisation et désérialisation
+###  Objectif
+S’assurer que le Triangulator peut correctement convertir les PointSets et Triangles entre leur format interne et la représentation binaire utilisée pour l’échange entre composants, sans perte ou corruption de données.
+
+### Scénarii de tests :
+-	Vérifier la reconversion les données binaires en un PointSet identique à l’original.
+-	Vérifier que le Triangulator transforme correctement un ensemble de triangles (avec leurs points) en données binaires.
+-	Vérifier que que le Triangulator reconvertit les données binaires en triangles et points identiques à l’original.
+-	Vérifier le comportement en cas de données corrompues ou incomplètes (ex. données binaires tronquées ou mal formées).
+
+
+### 6.	Cas de tests d’intégration avec PointSetManager
 ### Objectif : 
 
 S’assurer que le Triangulator interagit correctement avec le PointSetManager, en récupérant les ensembles de points via leur ID et en gérant de manière appropriée les erreurs ou défaillances
@@ -49,7 +62,7 @@ S’assurer que le Triangulator interagit correctement avec le PointSetManager, 
 -	Gestion d’erreurs du PointSetManager (404, 500, timeout)
 -	Vérifier que le Triangulator renvoie des erreurs explicites en cas d’échec
 
-### 6.	Tests de robustesse et performance
+### 7.	Tests de robustesse et performance
 ### Objectif
 S’assurer de la robustesse, de la stabilité et des performances du Triangulator dans des conditions extrêmes ou anormale.
 ### Scénarii de tests : 
