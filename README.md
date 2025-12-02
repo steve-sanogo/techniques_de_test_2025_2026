@@ -19,6 +19,9 @@ pouvez les faire ici.
 Dans le dossier /TP on trouve : 
 
 -**conftest.py** : contenant nos mocks
+
 -**test_pointset_manager.py** : contenant les tests du PointsetManager
+
 -**test_triangulator.py** : contenant les tests du triangulator
+
 -**couverture de tests.png** : rapport du test de couverture (100%)
