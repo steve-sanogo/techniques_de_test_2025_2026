@@ -15,17 +15,17 @@ Groupe de TP : M1 AI
 
 Commandes batch : chemin --> techniques_de_test_2025_2026/
 
-* make test : lance tous les tests (basé sur pytest).
+* test.bat : lance tous les tests (basé sur pytest).
 
-* make unit_test : lance tous les tests sauf les tests de performance (basé sur pytest).
+* unit_test.bat : lance tous les tests sauf les tests de performance (basé sur pytest).
 
-* make perf_test : lance uniquement les tests de performance (basé sur pytest).
+* perf_test.bat : lance uniquement les tests de performance (basé sur pytest).
 
-* make coverage : génère un rapport de couverture de code (basé sur coverage).
+* coverage.bat : génère un rapport de couverture de code (basé sur coverage).
 
-* make lint : valide la qualité de code (basé sur ruff check).
+* lint.bat : valide la qualité de code (basé sur ruff check).
 
-* make doc : génère la documentation en HTML (basé sur pdoc3).
+* doc.bat : génère la documentation en HTML (basé sur pdoc3).
 
 
 Chemin : techniques_de_test_2025_2026/triangulator
